@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  text-align: center;
+  padding: 20px;
+  width: 95%;
+  max-width: 450px;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+h1 {
+  color: #f0f0f0;
+  margin-bottom: 15px;
+  font-size: 2.2rem;
+}
+
+.message {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #333333;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.btn-control {
+  background-color: #333333;
+  color: #f0f0f0;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-control:hover {
+  background-color: #444;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cell {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  background-color: #121212;
+  border: 2px solid #333333;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.cell:hover {
+  background-color: #1E1E1E;
+}
+
+.cell::after {
+  content: attr(data-symbol);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+}
+
+.cell[data-symbol="X"]::after {
+  color: #FF4081;
+}
+
+.cell[data-symbol="O"]::after {
+  color: #448AFF;
+}
